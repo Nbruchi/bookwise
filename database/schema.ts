@@ -1,5 +1,6 @@
 import {
     date,
+    integer,
     pgEnum,
     pgTable,
     text,
@@ -25,7 +26,7 @@ export const users = pgTable("users", {
     id: uuid("id").notNull().primaryKey().defaultRandom().unique(),
     fullName: varchar("full_name", { length: 255 }).notNull(),
     email: text("email").notNull().unique(),
-    universityId: varchar("university_id").notNull().unique(),
+    universityId: integer("university_id").notNull().unique(),
     universityCard: text("university_card").notNull(),
     password: text("password").notNull(),
     role: ROLE_ENUM("role").notNull().default("USER"),

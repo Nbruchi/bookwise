@@ -1,9 +1,8 @@
 import BookList from "@/components/BookList";
 import BookOverview from "@/components/BookOverview";
 import { sampleBooks } from "@/constants";
-import React from "react";
 
-export default function Home() {
+export default async function Home() {
     return (
         <div>
             <BookOverview {...sampleBooks[0]} />
