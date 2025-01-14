@@ -16,7 +16,7 @@ const BookOverview = ({
 }: Book) => {
     return (
         <section className="book-overview">
-            <div className="flex flex-1 gap-5">
+            <div className="flex flex-col flex-1 gap-5">
                 <h1>{title}</h1>
                 <div className="book-info">
                     <p>
@@ -50,7 +50,7 @@ const BookOverview = ({
                     </p>
                 </div>
                 <p className="book-description">{description}</p>
-                <Button className="book-overview-btn">
+                <Button className="book-overview_btn">
                     <Image
                         src="/icons/book.svg"
                         alt="book"
@@ -68,13 +68,13 @@ const BookOverview = ({
                         variant="wide"
                         className="z-10"
                         coverColor={coverColor}
-                        coverUrl={coverUrl}
+                        coverImage={coverUrl}
                     />
                     <div className="absolute left-16 top-10 rotate-12 opacity-40 max-sm:hidden">
                         <BookCover
                             variant="wide"
                             coverColor={coverColor}
-                            coverUrl={coverUrl}
+                            coverImage={coverUrl}
                         />
                     </div>
                 </div>
