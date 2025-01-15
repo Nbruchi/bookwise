@@ -57,7 +57,7 @@ export const FIELD_TYPES = {
 
 export const sampleBooks = [
     {
-        id: 1,
+        id: "1",
         title: "The Midnight Library",
         author: "Matt Haig",
         genre: "Fantasy / Fiction",
@@ -74,7 +74,7 @@ export const sampleBooks = [
         createdAt: null,
     },
     {
-        id: 2,
+        id: "2",
         title: "Atomic Habits",
         author: "James Clear",
         genre: "Self-Help / Productivity",
@@ -91,7 +91,7 @@ export const sampleBooks = [
         createdAt: null,
     },
     {
-        id: 3,
+        id: "3",
         title: "You Don't Know JS: Scope & Closures",
         author: "Kyle Simpson",
         genre: "Computer Science / JavaScript",
@@ -109,7 +109,7 @@ export const sampleBooks = [
         createdAt: null,
     },
     {
-        id: 4,
+        id: "4",
         title: "The Alchemist",
         author: "Paulo Coelho",
         genre: "Philosophy / Adventure",
@@ -127,7 +127,7 @@ export const sampleBooks = [
         createdAt: null,
     },
     {
-        id: 5,
+        id: "5",
         title: "Deep Work",
         author: "Cal Newport",
         genre: "Self-Help / Productivity",
@@ -144,7 +144,7 @@ export const sampleBooks = [
         createdAt: null,
     },
     {
-        id: 6,
+        id: "6",
         title: "Clean Code",
         author: "Robert C. Martin",
         genre: "Computer Science / Programming",
@@ -162,7 +162,7 @@ export const sampleBooks = [
         createdAt: null,
     },
     {
-        id: 7,
+        id: "7",
         title: "The Pragmatic Programmer",
         author: "Andrew Hunt, David Thomas",
         genre: "Computer Science / Programming",
@@ -180,7 +180,7 @@ export const sampleBooks = [
         createdAt: null,
     },
     {
-        id: 8,
+        id: "8",
         title: "The Psychology of Money",
         author: "Morgan Housel",
         genre: "Finance / Self-Help",

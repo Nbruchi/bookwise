@@ -13,6 +13,7 @@ interface Book {
     summary: string;
     createdAt: Date | null;
     isLoanedBook?: boolean;
+    dueDate?: string;
 }
 
 interface AuthCredentials {
@@ -39,4 +40,34 @@ interface BookParams {
 interface BorrowBookParams {
     bookId: string;
     userId: string;
+}
+
+type UserRole = "USER" | "ADMIN";
+type UserStatus = "PENDING" | "APPROVED" | "REJECTED";
+
+interface User {
+    id: string;
+    fullName: string;
+    email: string;
+    universityId: number;
+    universityCard: string;
+    role: UserRole;
+    status: UserStatus;
+    lastActivityDate: Date | null;
+    createdAt: Date;
+}
+
+interface UserParams {
+    fullName: string;
+    email: string;
+    universityId: number;
+    universityCard: string;
+    password: string;
+    status: UserStatus;
+}
+
+interface SearchParams {
+    query?: string | null;
+    page?: number;
+    pageSize?: number;
 }

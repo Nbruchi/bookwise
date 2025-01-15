@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn } from "@/auth";
+import { auth, signIn } from "@/auth";
 import { db } from "@/database/drizzle";
 import { users } from "@/database/schema";
 import { hash } from "bcryptjs";
@@ -76,5 +76,49 @@ export const signUp = async (params: AuthCredentials) => {
     } catch (error) {
         console.error(error, "Signup error");
         return { success: false, error: `Signup error: ${error}` };
+    }
+};
+
+export const getCurrentUser = async () => {
+    const session = await auth();
+
+    if (!session?.user?.id) {
+        return {
+            success: false,
+            message: "No active session found",
+        };
+    }
+
+    try {
+        const [user] = await db
+            .select({
+                id: users.id,
+                fullName: users.fullName,
+                email: users.email,
+                status: users.status,
+                universityId: users.universityId,
+                universityCard: users.universityCard,
+            })
+            .from(users)
+            .where(eq(users.id, session.user.id))
+            .limit(1);
+
+        if (!user) {
+            return {
+                success: false,
+                message: "User not found in database",
+            };
+        }
+
+        return {
+            success: true,
+            data: user,
+        };
+    } catch (error) {
+        console.error("Error retrieving current user:", error);
+        return {
+            success: false,
+            message: `Failed to retrieve logged-in user: ${error instanceof Error ? error.message : "Unknown error"}`,
+        };
     }
 };

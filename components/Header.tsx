@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 
 const Header = ({ session }: { session: Session }) => {
     return (
-        <header className="my-10 justify-between flex gap-5">
+        <header className="flex my-10 justify-between gap-5 w-full">
             <Link href="/">
                 <Image
                     src="/icons/logo.svg"

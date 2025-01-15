@@ -39,7 +39,7 @@ const BorrowBook = ({
                     title: "Success",
                     description: "Book borrowed successfully",
                 });
-                router.push("/");
+                router.push("/profile");
             } else {
                 toast({
                     variant: "destructive",
