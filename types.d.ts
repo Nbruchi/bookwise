@@ -53,7 +53,7 @@ interface User {
     universityCard: string;
     role: UserRole;
     status: UserStatus;
-    lastActivityDate: Date | null;
+    lastActivityDate?: Date;
     createdAt: Date;
 }
 
