@@ -38,6 +38,7 @@ const BookForm = ({ type, ...book }: Props) => {
             genre: "",
             rating: 1,
             totalCopies: 1,
+            availableCopies: 1,
             coverUrl: "",
             coverColor: "",
             videoUrl: "",
@@ -173,7 +174,28 @@ const BookForm = ({ type, ...book }: Props) => {
                         </FormItem>
                     )}
                 />
-
+                <FormField
+                    control={form.control}
+                    name={"availableCopies"}
+                    render={({ field }) => (
+                        <FormItem className="flex flex-col gap-1">
+                            <FormLabel className="text-base font-normal text-dark-500">
+                                Available Copies
+                            </FormLabel>
+                            <FormControl>
+                                <Input
+                                    type="number"
+                                    min={1}
+                                    max={10000}
+                                    placeholder="Available copies"
+                                    {...field}
+                                    className="book-form_input"
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
                 <FormField
                     control={form.control}
                     name={"coverUrl"}

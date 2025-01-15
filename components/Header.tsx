@@ -1,11 +1,10 @@
-"use client";
-
 import { Session } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Avatar, AvatarFallback } from "./ui/avatar";
-import { getInitials } from "@/lib/utils";
+import { signOut } from "@/auth";
+import UserAvatar from "./UserAvatar";
+import { Button } from "./ui/button";
 
 const Header = ({ session }: { session: Session }) => {
     return (
@@ -20,16 +19,24 @@ const Header = ({ session }: { session: Session }) => {
             </Link>
             <ul className="flex flex-row items-center gap-8">
                 <li>
-                    <Link href="/profile" className="flex items-center gap-2">
-                        <Avatar>
-                            <AvatarFallback className="bg-amber-100">
-                                {getInitials(session?.user?.name || "IN")}
-                            </AvatarFallback>
-                        </Avatar>
-                        <p className="text-white">
-                            {session?.user?.name?.split(" ")[0]}
-                        </p>
+                    <Link href="/search" className="text-light-100">
+                        Search
                     </Link>
+                </li>
+                <li>
+                    <Link href="/profile">
+                        <UserAvatar session={session} />
+                    </Link>
+                </li>
+                <li>
+                    <form
+                        action={async () => {
+                            "use server";
+                            await signOut();
+                        }}
+                    >
+                        <Button>Logout</Button>
+                    </form>
                 </li>
             </ul>
         </header>
