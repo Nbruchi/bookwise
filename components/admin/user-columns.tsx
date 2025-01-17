@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 import { Link as LinkIcon, Trash } from "lucide-react";
 import Link from "next/link";
 
-export const columns: ColumnDef<{
+export const userColumns: ColumnDef<{
     id: string;
     fullName: string;
     email: string;

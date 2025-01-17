@@ -1,4 +1,4 @@
-import { columns } from "@/components/admin/Columns";
+import { userColumns } from "@/components/admin/user-columns";
 import { DataTable } from "@/components/admin/DataTable";
 import { db } from "@/database/drizzle";
 import { users } from "@/database/schema";
@@ -18,7 +18,7 @@ export default async function Users() {
 
     return (
         <div className="container mx-auto py-10">
-            <DataTable columns={columns} data={data} />
+            <DataTable columns={userColumns} data={data} />
         </div>
     );
 }

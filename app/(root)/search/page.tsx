@@ -27,7 +27,7 @@ const Search = async ({
     });
 
     return (
-        <div className="w-full p-6">
+        <div className="w-full">
             <div className="flex flex-col gap-6 items-center justify-center">
                 <p className="font-semibold text-light-100 font-ibm-plex-sans uppercase text-xl">
                     Discover your next great read:
